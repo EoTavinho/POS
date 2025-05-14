@@ -7,20 +7,20 @@ class Usuario(BaseModel):
     password:str
     data_criacao:date
 
-class Livro:
+class Livro(BaseModel):
     titulo:str
     ano:int
     edicao:int
 
-
-class Emprestimo:
+class Emprestimo(BaseModel):
     usuario:Usuario
     livro:Livro
     data_emprestimo:date
-
-class Biblioteca:
-    nome:str
-    acervo:List[Livro]
-    usuario:List[Usuario]
-    emprestimo: List[Emprestimo]
     data_devolucao:date
+
+
+class Biblioteca(BaseModel):
+    nome:str
+    acervo: List[Livro]
+    usuarios: List[Usuario]
+    emprestimos: List[Emprestimo]
